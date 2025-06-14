@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int lowerbound(vector <int> &arr, int target){
-    int ans = lower_bound(arr.begin(), arr.end(), target) - arr.begin();
+int upperbound(vector <int> &arr, int target){
+    int ans = upper_bound(arr.begin(), arr.end(), target) - arr.begin();
     return ans;
 }
 
@@ -16,6 +16,6 @@ int main(){
     // call
     int target;
     cin >> target;
-    cout << lowerbound(arr, target);
+    cout << upperbound(arr, target);
     return 0;
 }

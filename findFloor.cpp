@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int lower_bound(vector <int> &arr, int target){
+int findFloor(vector <int> &arr, int target){
     int n = arr.size();
-    int low = 0, high = n - 1, ans = n;
+    int low = 0, high = n - 1, ans = -1;
     while(low <= high){
         int mid = low + (high - low)/2;
-        if(arr[mid] >= target){
-            high = mid - 1;
-            ans = mid;
+        if(arr[mid] <= target){
+            low = mid + 1;
+            ans = arr[mid];
         }
-        else low = mid + 1;
+        else high = mid - 1;
     }
     return ans;
 }
@@ -25,6 +25,6 @@ int main(){
     // call
     int target;
     cin >> target;
-    cout << lower_bound(arr, target);
+    cout << findFloor(arr, target);
     return 0;
 }

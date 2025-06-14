@@ -1,2 +1,1 @@
-"# Searching using Binary search in C++" 
-"# Searching" 
+# Searching using Binary search in C++

@@ -1,16 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int lowerbound(vector <int> &arr, int target){
+    int n = arr.size();
+    int low = 0, high = n - 1, ans = n;
+    while(low <= high){
+        int mid = low + (high - low)/2;
+        if(arr[mid] >= target){
+            high = mid - 1;
+            ans = mid;
+        }
+        else low = mid + 1;
+    }
+    return ans;
+}
+
+int upperbound(vector <int> &arr, int target){
+    int n = arr.size();
+    int low = 0, high = n - 1, ans = n;
+    while(low <= high){
+        int mid = low + (high - low)/2;
+        if(arr[mid] > target){
+            high = mid - 1;
+            ans = mid;
+        }
+        else low = mid + 1;
+    }
+    return ans;
+}
+
 vector <int> searchRange(vector <int> &arr, int target){
     int n = arr.size();
-    int first = -1, last = -1;
-    for(int i = 0; i < n; i++){
-        if(arr[i] == target){
-            if(first == -1) first = i;
-            last = i;
-        }
-    }
-    return {first, last};
+    int lb = lowerbound(arr, target);
+    int ub = upperbound(arr, target);
+    if (lb == n || arr[lb] != target ) return {-1, -1};
+    return {lb, ub - 1};
 }
 
 int main(){

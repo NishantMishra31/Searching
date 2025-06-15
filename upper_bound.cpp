@@ -6,7 +6,7 @@ int upper_bound(vector <int> &arr, int target){
     int low = 0, high = n - 1, ans = n;
     while(low <= high){
         int mid = low + (high - low)/2;
-        if(arr[mid] >= target){
+        if(arr[mid] > target){
             high = mid - 1;
             ans = mid;
         }

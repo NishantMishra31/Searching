@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int firstOccurence(vector <int> &arr, int target){
+int firstOccurrence(vector <int> &arr, int target){
     int n = arr.size();
     int low = 0, high = n - 1, first = -1, mid;
     while (low <= high){
@@ -31,19 +31,11 @@ int lastOccurence(vector <int> &arr, int target){
     return last;
 }
 
-vector <int> searchRange(vector <int> &arr, int target){
-    int first = firstOccurence(arr, target);
-    if (first == -1) return {-1, -1};
-    int last = lastOccurence(arr, target);
-    return {first, last};
-}
-
 int countOccurences(vector <int> &arr, int target){
-    int first = firstOccurence(arr, target);
+    int first = firstOccurrence(arr, target);
     if (first == -1) return 0;
     int last = lastOccurence(arr, target);
     return last - first + 1;
-    
 }
 
 int main(){

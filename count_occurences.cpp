@@ -16,7 +16,7 @@ int firstOccurrence(vector <int> &arr, int target){
     return first;
 }
 
-int lastOccurence(vector <int> &arr, int target){
+int lastOccurrence(vector <int> &arr, int target){
     int n = arr.size();
     int low = 0, high = n - 1, last = -1, mid;
     while (low <= high){
@@ -31,10 +31,10 @@ int lastOccurence(vector <int> &arr, int target){
     return last;
 }
 
-int countOccurences(vector <int> &arr, int target){
+int countOccurrences(vector <int> &arr, int target){
     int first = firstOccurrence(arr, target);
     if (first == -1) return 0;
-    int last = lastOccurence(arr, target);
+    int last = lastOccurrence(arr, target);
     return last - first + 1;
 }
 
@@ -48,6 +48,6 @@ int main(){
     int target;
     cin >> target;
     // call
-    cout << countOccurences(arr, target);
+    cout << countOccurrences(arr, target);
     return 0;
 }

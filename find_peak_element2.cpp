@@ -1,8 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// this code may fail some edge testcases
-
 int findPeakElement(vector<int>& arr) {
     int n = arr.size();
     if (n == 1) return 0;
@@ -17,7 +15,7 @@ int findPeakElement(vector<int>& arr) {
         else if (arr[mid - 1] < arr[mid] && arr[mid] < arr[mid + 1] ){
             low = mid + 1;
         }
-        else if (arr[mid - 1] > arr[mid] && arr[mid] > arr[mid + 1] ){
+        else {
             high = mid - 1;
         }
     }

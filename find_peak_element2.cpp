@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// this code may fail some edge testcases
+
 int findPeakElement(vector<int>& arr) {
     int n = arr.size();
     if (n == 1) return 0;

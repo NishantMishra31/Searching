@@ -12,7 +12,7 @@ bool isPerfectSquare(int num) {
         else high = mid - 1;
     }
     return false;
-    }
+}
 
 int main(){
     int n;

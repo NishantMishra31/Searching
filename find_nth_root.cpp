@@ -1,14 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long nth_power(int mid, int n){
+/* this code may run into overflow
+beyond long long values due to exponential computing*/
+
+long long nth_power(long long mid, long long n){
     long long ans = 1;
     while (n > 0){
         if (n % 2 == 1){
+            if (ans > LLONG_MAX / mid) return LLONG_MAX;
             ans = ans * mid;
             n -= 1;
         }
         else{
+            if (mid > LLONG_MAX / mid) return LLONG_MAX;
             mid = mid * mid;
             n = n / 2;
         }
@@ -16,9 +21,9 @@ long long nth_power(int mid, int n){
     return ans;
 }
 
-int isRoot(int n , int m) {
-    if (m < 1) return false;
-    int low = 1, high = m / 2;
+long long isRoot(long long n , long long m) {
+    if (m < 1) return -1;
+    long long low = 1, high = m;
     while (low <= high) {
         long long mid = low + (high - low) / 2;
         long long power = nth_power(mid, n);
@@ -30,7 +35,7 @@ int isRoot(int n , int m) {
 }
 
 int main(){
-    int n, m;
+    long long n, m;
     cin >> n >> m;
     cout << isRoot(n, m);
     return 0;

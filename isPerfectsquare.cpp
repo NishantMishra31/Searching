@@ -17,6 +17,6 @@ bool isPerfectSquare(int num) {
 int main(){
     int n;
     cin >> n;
-    cout << isPerfectSquare(n);
+    cout << (isPerfectSquare(n) ? "true" : "false");
     return 0;
 }

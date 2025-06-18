@@ -3,7 +3,7 @@ using namespace std;
 
 bool isPerfectSquare(int num) {
     if (num < 1) return false;
-    int low = 1, high = num;
+    int low = 1, high = num/2;
     while (low <= high) {
         long long mid = low + (high - low) / 2;
         long long square = mid * mid;

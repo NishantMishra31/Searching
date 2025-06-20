@@ -20,18 +20,16 @@ int possible(vector <int> &bloomDay, int day, int m, int k){
 int minDays(vector <int> &bloomDay, int m, int k){
     int n = bloomDay.size();
     if (1LL * m * k > n) return -1;
-    int ans = -1;
     int low =*min_element(bloomDay.begin(), bloomDay.end());
     int high =*max_element(bloomDay.begin(), bloomDay.end());
     while (low <= high){
         int mid = low +(high - low) / 2;
         if (possible(bloomDay, mid, m, k) >= m){
-            ans = mid;
             high = mid - 1;
         }
         else low = mid + 1;
     }
-    return ans;
+    return low;
 }
 
 int main(){

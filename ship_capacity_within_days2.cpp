@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// this is cleaner and uses binary search to reduce the TC
+
 int daysRequired(vector <int> weights, int capacity){
     int n = weights.size();
     int days = 1, load = 0;

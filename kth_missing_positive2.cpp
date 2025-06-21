@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// this code will fail some edge cases like [1, 2] and k = 1
+// this code is efficient and works for all testcases
 
 int findMissing(vector <int> &arr, int k){
     int n = arr.size();

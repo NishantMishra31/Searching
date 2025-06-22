@@ -28,9 +28,7 @@ int maxDistance(vector<int>& arr, int m) {
             ans=mid;
             low=mid+1;
         }
-        else{
-            high=mid-1;
-        }
+        else high=mid-1;
     }
     return ans;
 }

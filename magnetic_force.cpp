@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// this problem is another version of the magnetic cows problem
-
 int canPlace(vector<int>& arr, int n , int m, int x){
     int last=arr[0];
     int ballPlaced=1;

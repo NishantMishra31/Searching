@@ -20,8 +20,8 @@ int allocate_books(vector <int> &arr, int k){
     int high = accumulate(arr.begin(), arr.end(), 0);
     while (low <= high){
         int mid = low + (high - low) / 2;
-        if (holdingBooks(arr, mid) <= k) low = mid + 1;
-        else high = mid - 1;
+        if (holdingBooks(arr, mid) <= k) high = mid - 1;
+        else low = mid + 1;
     }
     return low;
 }

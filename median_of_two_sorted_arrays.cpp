@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// this approah uses O(n+m) TC to merge all the elemens
+// and also an extra space of O(n+m) to store the values
+
 double median(vector <int> &arr1, vector <int> &arr2){
     int n = arr1.size();
     int m = arr2.size();

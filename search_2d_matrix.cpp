@@ -1,21 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int row(vector<vector<int>> mat){
+bool search(vector<vector<int>> mat, int k){
     int m = mat.size();
     int n = mat[0].size();
     int index = -1, max_count = 0;
     for(int i = 0; i < m; i++){
         int cnt = 0;
         for(int j = 0; j < n; j++){
-            cnt += mat[i][j];
-        }
-        if (cnt > max_count){
-            max_count = cnt;
-            index = i;
+            if (mat[i][j] == k) return true;
         }
     }
-    return index;
+    return false;
 }
 
 int main(){
@@ -27,7 +23,9 @@ int main(){
             cin >> mat[i][j];
         }
     }
+    int k;
+    cin >> k;
     //call
-    cout << row(mat);
+    cout << search(mat, k);
     return 0;
 }

@@ -3,7 +3,7 @@ using namespace std;
 
 // this approach limits the extra space usage and takes an count variable to track the elements indices
 
-double median(vector <int> &arr1, vector <int> &arr2){
+double findMedianSortedArrays(vector <int> &arr1, vector <int> &arr2){
     int n = arr1.size();
     int m = arr2.size();
     int i = 0, j = 0;
@@ -54,6 +54,6 @@ int main(){
         cin >> arr2[i];
     }
     // call
-    cout << median(arr1, arr2);
+    cout << findMedianSortedArrays(arr1, arr2);
     return 0;
 }

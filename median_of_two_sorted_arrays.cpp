@@ -4,7 +4,7 @@ using namespace std;
 // this approah uses O(n+m) TC to merge all the elemens
 // and also an extra space of O(n+m) to store the values
 
-double median(vector <int> &arr1, vector <int> &arr2){
+double findMedianSortedArrays(vector <int> &arr1, vector <int> &arr2){
     int n = arr1.size();
     int m = arr2.size();
     int i = 0, j = 0;
@@ -33,6 +33,6 @@ int main(){
         cin >> arr2[i];
     }
     // call
-    cout << median(arr1, arr2);
+    cout << findMedianSortedArrays(arr1, arr2);
     return 0;
 }

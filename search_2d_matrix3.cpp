@@ -1,27 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool bs(vector<int> mat, int k){
-    int x = mat.size();
-    int low = 0, high = x - 1;
-    while (low <= high){
-        int mid = low + (high - low) / 2;
-        if (mat[mid] == k) return true;
-        else if(mat[mid] < k){
-            low = mid + 1;
-        }
-        else high = mid - 1;
-    }
-    return false;
-}
-
 bool search(vector<vector<int>> mat, int k){
     int m = mat.size();
     int n = mat[0].size();
-    for(int i = 0; i < m; i++){
-        if(mat[i][0] <= k && k <= mat[i][n-1]){
-            return bs(mat[i], k);
-        }
+    int low = 0, high = m * n - 1;
+    while (low <= high){
+        int mid = low + (high - low) / 2;
+        int row = mid / n, col = mid % n;
+        if (mat[row][col] == k) return true;
+        else if (mat[row][col] < k) low = mid + 1;
+        else high = mid - 1;
     }
     return false;
 }

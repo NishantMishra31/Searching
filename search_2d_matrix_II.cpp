@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 bool searchMatrix(vector<vector<int>> &mat, int k){
     int row = 0;
     int col = mat[0].size() - 1;
@@ -23,6 +24,6 @@ int main(){
     int k;
     cin >> k;
     //call
-    cout << searchMatrix(mat, k);
+    cout << (searchMatrix(mat, k) ? "true" : "false");
     return 0;
 }
